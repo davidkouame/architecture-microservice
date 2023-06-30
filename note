@@ -1,0 +1,8 @@
+$>docker build . -t node-web-app
+$>docker run -p 8080:3000 -d --name app-front node-web-app
+$>docker container create -i -t --name front-app node-web-app
+docker run -p 8080:3000 -v //c/Users/User/Documents/workspace/pork/architecture-microservice/front/my-app:/usr/src/app -d --name app-front node-web-app
+docker run -p 8080:8080 -v //c/Users/User/Documents/workspace/pork/architecture-microservice/front:/usr/src/app -d --name app-front node-web-app
+docker run -p 8080:8080 -v //c/Users/User/Documents/workspace/pork/architecture-microservice/front:/usr/src/app -d --restart unless-stopped app-front 
+
+docker run -it --name nginx -p 8080:80 -v /c/Users/User/Documents/workspace/pork/docker:/usr/share/nginx/html nginx
