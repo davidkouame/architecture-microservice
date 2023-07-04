@@ -1,0 +1,11 @@
+version: "2"
+services:
+  node:
+    image: "node:18"
+    user: "node"
+    working_dir: /usr/src/app
+    volumes:
+      - ./my-app:/usr/src/app
+    ports:
+      - "8083:3000"
+    command: bash -c "npm install nodemon && nodemon --exec npm start"
