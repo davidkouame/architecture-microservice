@@ -12,22 +12,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TransactionDetail from './pages/TransactionDetail';
 import CreateShoe from './pages/CreateShoe';
 import Login from './pages/Login';
+import { Provider } from 'react-redux'
+import store from './components/store'
 
 export default function AppRouter() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/market" element={<Market />} />
-          <Route path="/transactions" element={<Transaction />} />
-          <Route path="/transactions/:id" element={<TransactionDetail />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/create-shoes' element={<CreateShoe />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/market" element={<Market />} />
+            <Route path="/transactions" element={<Transaction />} />
+            <Route path="/transactions/:id" element={<TransactionDetail />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/create-shoes' element={<CreateShoe />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

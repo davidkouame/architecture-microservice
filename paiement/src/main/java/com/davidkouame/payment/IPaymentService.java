@@ -2,8 +2,10 @@ package com.davidkouame.payment;
 
 import java.util.List;
 
-public interface IProductService {
-    ProductCreatedDto saveProduct(ProductSaveDto productSaveDto) throws Exception;
-    List<ProductCreatedDto> findProducts();
-    List<ProductCreatedDto> findProductsByUserId(Long userId);
+public interface IPaymentService {
+    PaymentCreatedDto savePayment(PaymentSaveDto paymentSaveDto) throws Exception;
+    List<PaymentCreatedDto> findPayments();
+    List<PaymentCreatedDto> findPaymentsByUserId(Long userId);
+
+    PaymentCreatedDto findPayment(Long paymentId) throws Exception;
 }

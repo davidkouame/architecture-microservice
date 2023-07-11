@@ -50,11 +50,18 @@ const CreateShoe = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                setShow(true);
-                setMessageAlert("Votre produit a été enregistré avec succès !");
-                setVariantAlert("success");
-                console.log("Success !");
-                clearForm();
+                if(data.status != 201){
+                    setHiddenAlert(false);
+                    setMessageAlert("Oups ! Une erreur s'est produite lors de la soumission !");
+                    setVariantAlert("danger");
+                    console.log("Une erreur s'est produite")
+                }else{
+                    setShow(true);
+                    setMessageAlert("Votre produit a été enregistré avec succès !");
+                    setVariantAlert("success");
+                    console.log("Success !");
+                    clearForm();
+                }
             })
             .catch((err) => {
                 console.log(err.message);

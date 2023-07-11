@@ -1,33 +1,24 @@
-package com.davidkouame.article;
+package com.davidkouame.payment;
 
 import lombok.Data;
 import lombok.Setter;
 
+import java.util.List;
+
 @Data
 @Setter
-public class ProductSaveDto {
+public class PaymentSaveDto {
 
-    private String label;
-    private Double price;
-    private String description;
-    private String image;
+    private double total;
+    private List<PaymentProduct> paymentProduct;
+    private Long userId;
 
-    Product build(){
-        Product product = new Product();
-        product.setLabel(label);
-        product.setPrice(price);
-        product.setDescription(description);
-        product.setImage(image);
-        return product;
-    }
-
-    ProductCreatedDto build(Product product){
-        ProductCreatedDto productCreatedDto = new ProductCreatedDto();
-        productCreatedDto.setId(product.getId());
-        productCreatedDto.setLabel(product.getLabel());
-        productCreatedDto.setPrice(product.getPrice());
-        productCreatedDto.setDescription(product.getDescription());
-        productCreatedDto.setImage(product.getImage());
-        return productCreatedDto;
+    @Data
+    static class PaymentProduct{
+        private long productId;
+        private String productName;
+        private double productPrice;
+        private double quantity;
+        private double total;
     }
 }

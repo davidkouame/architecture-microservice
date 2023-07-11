@@ -9,13 +9,13 @@ import java.sql.Blob;
 @Data
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String label;
     private Double price;
     private String description;
 
     @Lob
-    @Column(name="CONTENT", length=512)
+    @Column(name="image", length=512)
     private String image;
 }
