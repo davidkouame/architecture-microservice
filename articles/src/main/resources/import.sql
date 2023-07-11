@@ -1,0 +1,10 @@
+insert into product (label, price, description) values ('product1', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product2', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product3', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product4', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product5', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product6', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product7', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product8', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product9', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
+insert into product (label, price, description) values ('product10', '12000', 'Some quick example text to build on the card title and make up the bulk of the card''s content.');
