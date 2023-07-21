@@ -1,0 +1,10 @@
+com\davidkouame\article\ProductRepository.class
+com\davidkouame\article\Response.class
+com\davidkouame\article\ProductSaveDto.class
+com\davidkouame\article\Product.class
+com\davidkouame\article\ArticleApplication.class
+com\davidkouame\article\ProductControllerImpl.class
+com\davidkouame\article\IProductService.class
+com\davidkouame\article\ProductCreatedDto.class
+com\davidkouame\article\ArticleApplication$1.class
+com\davidkouame\article\ProductServiceImpl.class

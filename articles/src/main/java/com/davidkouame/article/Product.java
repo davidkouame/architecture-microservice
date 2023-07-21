@@ -3,7 +3,6 @@ package com.davidkouame.article;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Blob;
 
 @Entity
 @Data
@@ -17,5 +16,5 @@ public class Product {
 
     @Lob
     @Column(name="image", length=512)
-    private String image;
+    private byte[] image;
 }

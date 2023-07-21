@@ -17,7 +17,7 @@ public class ProductSaveDto {
         product.setLabel(label);
         product.setPrice(price);
         product.setDescription(description);
-        product.setImage(image);
+        product.setImage(image != null ? image.getBytes() : null);
         return product;
     }
 
@@ -27,7 +27,7 @@ public class ProductSaveDto {
         productCreatedDto.setLabel(product.getLabel());
         productCreatedDto.setPrice(product.getPrice());
         productCreatedDto.setDescription(product.getDescription());
-        productCreatedDto.setImage(product.getImage());
+        productCreatedDto.setImage(new String(product.getImage()));
         return productCreatedDto;
     }
 }

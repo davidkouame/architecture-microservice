@@ -1,0 +1,44 @@
+version : "2"
+services:
+  app-back-article:
+    build: articles/
+    container_name: app-back-article
+    ports:
+    - "8086:8086"
+    depends_on:
+      mysql:
+        condition: service_healthy
+  mysql:
+    image: mysql
+    container_name: mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 3s
+      retries: 5
+      start_period: 30s
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init.sql:/data/application/init.sql
+    environment:
+    - "MYSQL_ROOT_PASSWORD=password"
+    ports:
+    - "3306:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+    - "PMA_ARBITRARY=1"
+    ports:
+    - "8080:80"
+  app-back-paiement:
+    build: paiement/
+    container_name: app-back-paiement
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+    - "8087:8087"
+  app-front:
+    build: front/
+    container_name: app-back-front
+    ports:
+    - "8085:3000"

@@ -19,7 +19,7 @@ public class ProductCreatedDto {
         productCreatedDto.label = product.getLabel();
         productCreatedDto.price = product.getPrice();
         productCreatedDto.description = product.getDescription();
-        productCreatedDto.image = product.getImage();
+        productCreatedDto.image = product.getImage() != null ? new String(product.getImage()) : "";
         return productCreatedDto;
     }
 }
