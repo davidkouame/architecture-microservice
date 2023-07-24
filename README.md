@@ -1,5 +1,3 @@
-![img](./assets/arch_image1.png)
-
 # Mise en place d'une architecture microservice
 ![img](./assets/ach_architecture_microservice.png)
 
